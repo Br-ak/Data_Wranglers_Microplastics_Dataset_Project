@@ -20,7 +20,7 @@ We used Random Forest, kNN Regression, and Decision Tree Regression models for o
 For our first model, we chose to try and make predictions on Material_PE (Polyethylene) and chose to use the Random Forest Regressor. While the RMSE was relatively low, the plotted data led us to believe that the Random Forest Regressor was unlikely to work for our predictions, even after changing around some of the training and fit variables and estimators.
 ### Model 2 - K Neighbors Regressor
 For our second model we chose to try the kNN regression model. Overall, the kNN model performance varied with different values of k, but none of the models achieved particularly good performance, as indicated by the relatively high RMSE values. Further experimentation with different algorithms or parameter tuning may be warranted to improve the model's predictive accuracy.
-###Model 3 - Decision Tree Regressor
+### Model 3 - Decision Tree Regressor
 For the last model we tried to do a Decision Tree Regression model. In this case, the relatively low MSE and RMSE values suggest that the decision tree model performed reasonably well in capturing the underlying patterns in the data and making predictions. However, the simplicity and small amount of data make these predictions less valuable.
 
 ## Results
