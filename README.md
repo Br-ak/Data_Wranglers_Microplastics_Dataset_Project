@@ -15,17 +15,19 @@ Validation Rules (Sample Data): https://data.ca.gov/dataset/e7624fce-c058-4fa1-a
 Microplastics Sample Data (wide): https://data.ca.gov/dataset/e7624fce-c058-4fa1-a29f-2594d8f8f160/resource/b027a5ef-d42e-415c-b9b9-257c1bd5ae89/download/samples_geocoded.csv
 
 ## Methods
-What materials/APIs/tools were used or who was included in answering the research question?
+We used Random Forest, kNN Regression, and Decision Tree Regression models for our predictions.
+### Model 1 - Random Forest Regressor
+For our first model, we chose to try and make predictions on Material_PE (Polyethylene) and chose to use the Random Forest Regressor. While the RMSE was relatively low, the plotted data led us to believe that the Random Forest Regressor was unlikely to work for our predictions, even after changing around some of the training and fit variables and estimators.
+### Model 2 - K Neighbors Regressor
+For our second model we chose to try the kNN regression model. Overall, the kNN model performance varied with different values of k, but none of the models achieved particularly good performance, as indicated by the relatively high RMSE values. Further experimentation with different algorithms or parameter tuning may be warranted to improve the model's predictive accuracy.
+###Model 3 - Decision Tree Regressor
+For the last model we tried to do a Decision Tree Regression model. In this case, the relatively low MSE and RMSE values suggest that the decision tree model performed reasonably well in capturing the underlying patterns in the data and making predictions. However, the simplicity and small amount of data make these predictions less valuable.
 
 ## Results
-What answer was found to the research question; what did the study find?
-Was the tested hypothesis true? Any visualizations?
+Each model was trained and tested using the same dataset, with their respective metrics assessed for accuracy. The Random Forest model yielded a mean squared error (MSE) of 0.017 and a root mean squared error (RMSE) of 0.132. For kNN Regression, varying values of k were explored, resulting in different training and testing RMSEs across different k values, but ultimately had too high of a MSE and RMSE to be used accurately. Finally, the Decision Tree Regression model produced an MSE of 0.013. Overall, these results tell us that the Decision Tree Regression model was the best fit for our dataset, but still was unable to provide a useful prediction for the amount of data we had to work with.
 
 ## Discussion
-What might the answer imply and why does it matter? 
-How does it fit in with what other researchers have found? 
-What are the perspectives for future research? 
-Survey about the tools investigated for this assignment.
+In the end we were unable to provide any reliable predictions based on the values obtained from the dataset. When first selecting the dataset it seemed very promising but later we discovered just how many actual samples we were able to use. Many of the samples had many null values or values with mismatched data types. This made it very difficult to use the majority of the data present at the beginning and after cleaning we only had around 60 samples, most of which fell under the same 7 or so concentration values, making predictions unlikely to be accurate. There are still other models that we could try but at this point the dataset seems to be holding us back the most.
 
 ## Summary
-Most important findings.
+This project started out with the goal of reliably predicting the safety of water for consumption based on the amount of microplastics found in similar sources. Once we got into the data we changed predictors to one with a more reliable set of values in the dataset. After compiling and modifying our models we were unable to determine or predict the safety of water as the dataset had a few issues as previously mentioned. This dataset is a work in progress and has been steadily updated since July 21 2022, but until the data becomes more reliable and regulated, there won’t be a way to accurately predict the safety of drinking water based on the microplastics found in similar sources.
